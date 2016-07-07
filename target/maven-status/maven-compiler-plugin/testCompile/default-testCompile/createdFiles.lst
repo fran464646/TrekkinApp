@@ -1,0 +1,14 @@
+tfg/test/parameterservice/ParameterServiceTest.class
+tfg/test/parameter/ParameterTest.class
+tfg/test/statservice/StatServiceTest.class
+tfg/test/userprofileservice/UserProfileServiceTest.class
+tfg/test/alert/AlertTest.class
+tfg/test/stat/StatTest.class
+tfg/test/selenium/SeleniumTest.class
+tfg/test/routeservice/RouteServiceTest.class
+tfg/test/alertservice/AlertServiceTest.class
+tfg/test/util/GlobalNames.class
+tfg/test/userprofile/UserProfileTest.class
+tfg/test/tweet/TweetTest.class
+tfg/test/route/RouteTest.class
+tfg/test/tweetservice/TweetServiceTest.class
