@@ -1,0 +1,82 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter"
+	t:type="Layout" t:title="title">
+	 
+<body background="http://www.kakslauttanen.fi/assets/2013/10/SUMMERAUTUMN_Patikointi_1.jpg" style="background-attachment: fixed;background-position: center; background-repeat: no-repeat; background-size: cover;">
+<form t:type="Form" class="form-horizontal">
+<!-- Print user products. -->
+	<div style="width: 35%;float:left;">
+					<t:label for="dateStart" style="display:inline-block;float:left; margin-right:10px; margin-left:10px;">${message:dateStart}</t:label>
+                    <t:datefield t:id="dateStart" value="dateStart" style="display:inline-block;"/>
+    </div>
+    <div style="width: 35%;float:left;">
+    				<t:label for="dateStart" style="display:inline-block;float:left; margin-right:10px; margin-left:10px;">${message:dateEnd}</t:label>
+                    <t:datefield t:id="dateEnd" value="dateEnd" style="display:inline-block;"/>
+    </div>
+	<div style="float:left;">
+		<button id="button" t:zone="myzone" style="display:inline-block;float:left; margin-right:10px; margin-left:10px;" type="submit" class="btn btn-primary">${message:filter}</button>
+	</div>
+	<div style="float:left;">
+		<t:pagelink page="search/routestats" context="routeId" style="display:inline-block;float:left; margin-right:10px;">${message:showStats}</t:pagelink>
+	</div>
+	</form>
+	<form>
+	<t:if test="tweets">
+	
+	<t:zone t:id="myZone" id="myZone">
+	<table class="table table-striped table-hover">
+	
+		<thead>
+			<tr>	    	
+			    <th>${message:tweetText-label}</th>			    
+			    <th>${message:tweetDate-label}</th>
+			</tr>
+		</thead>
+		
+		<tbody>			
+			
+				<tr t:type="Loop" t:source="tweets" t:value="tweet">
+				    <td>
+				    	<a id = "tweetName" href="#" t:type="PageLink" t:page="search/tweetdetails"
+				    	t:context="tweet.tweetId">
+				    	${tweet.tweetText}
+				    	</a>
+				    </td>
+				    <td id = "tweetDate">${tweet.tweetCreationDate}</td>
+				</tr>
+			
+		</tbody>
+	
+	</table>
+	</t:zone>
+
+	<!-- "Previous" and "Next" links. -->
+	
+	<ul class="pager">
+	
+		<t:if test="previousLinkContext">
+			<li>
+				<a href="#" t:type="PageLink" t:page="search/searchedtweets"
+		   			t:context="previousLinkContext">&larr; ${message:link-previous}</a>
+			</li>
+		</t:if>
+		
+		<li>&nbsp;</li>
+
+		<t:if test="nextLinkContext">
+			<li>
+				<a href="#" t:type="PageLink" t:page="search/searchedtweets"
+		   			t:context="nextLinkContext">${message:link-next} &rarr;</a>
+			</li>
+		</t:if>
+	</ul>
+	<p:else>
+		<br/>
+		<br/>
+		<br/>	
+		<h4 class="alert alert-danger text-center">${message:noTweets}</h4>
+	</p:else>
+</t:if>
+</form>
+</body>
+</html>

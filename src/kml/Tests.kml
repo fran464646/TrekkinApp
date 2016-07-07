@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Camino Aragones 1</name>
+	<description><![CDATA[<b>El Camino Aragonés<br>from Somport<br>to Puente la Reina<br><br><a href="http://www.ElCaminoSantiago.com">www.ElCaminoSantiago.com</a></b><br>Complete Resources for the<br>Pilgrimage Road to Santiago<br><br><b><a href="http://www.ElCaminoSantiago.com/Camino-Santiago-Maps.htm">Maps for El Camino Santiago</a><br><br><a href="http://www.ElCaminoSantiago.com/Weather-Camino-Santiago.htm">Weather for El Camino Santiago</a></b><br><br>]]></description>
+	<gx:balloonVisibility>1</gx:balloonVisibility>
+	<StyleMap id="Camino4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#Camino4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="Camino4">
+		<IconStyle>
+			<Icon>
+				<href>http://www.elcaminosantiago.com/WebArt/Shell-3-032.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+	<Placemark>
+		<name>Puerto de Somport</name>
+		<styleUrl>#Camino4</styleUrl>
+		<Point>
+			<coordinates>1,2,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>Somport-Jaca</name>
+		<styleUrl>#Camino4</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+		</LineString>
+		<Point>
+			<coordinates>3,4,0</coordinates>
+		</Point>
+	</Placemark>
+	</Folder>
+</Document>
+</kml>

@@ -1,0 +1,236 @@
+EXCEPTION STACK:
+
+
+     Exception type: org.apache.tapestry5.runtime.ComponentEventException
+            Message: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]; nested exception is org.hibernate.hql.internal.ast.QuerySyntaxException: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]
+            context: org.apache.tapestry5.internal.EmptyEventContext@7fe981
+          eventType: autocomplete
+           location: classpath:tfg/web/pages/search/SearchRoute.tml, line 12
+
+     Exception type: org.apache.tapestry5.ioc.internal.OperationException
+            Message: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]; nested exception is org.hibernate.hql.internal.ast.QuerySyntaxException: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]
+           location: classpath:tfg/web/pages/search/SearchRoute.tml, line 12
+              trace: Handling Ajax 'autocomplete' component event request for search/Route:namesearchroute.
+                     Triggering event 'autocomplete' on search/Route:namesearchroute
+                     Triggering event 'provideCompletions' on search/Route:namesearchroute
+
+     Exception type: org.apache.tapestry5.runtime.ComponentEventException
+            Message: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]; nested exception is org.hibernate.hql.internal.ast.QuerySyntaxException: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]
+            context: <EventContext: Ca>
+          eventType: provideCompletions
+           location: classpath:tfg/web/pages/search/SearchRoute.tml, line 12
+
+     Exception type: org.springframework.orm.hibernate4.HibernateQueryException
+            Message: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]; nested exception is org.hibernate.hql.internal.ast.QuerySyntaxException: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]
+  mostSpecificCause: org.hibernate.hql.internal.ast.QuerySyntaxException: Route is not mapped
+        queryString: SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' 
+          rootCause: org.hibernate.hql.internal.ast.QuerySyntaxException: Route is not mapped
+
+     Exception type: org.hibernate.hql.internal.ast.QuerySyntaxException
+            Message: Route is not mapped [SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' ]
+        queryString: SELECT u FROM Route u WHERE u.routeName LIKE '%' || :routeName || '%' 
+
+     Exception type: org.hibernate.hql.internal.ast.QuerySyntaxException
+            Message: Route is not mapped
+
+  Stack trace:
+  - org.hibernate.hql.internal.ast.util.SessionFactoryHelper.requireClassPersister(SessionFactoryHelper.java:189)
+  - org.hibernate.hql.internal.ast.tree.FromElementFactory.addFromElement(FromElementFactory.java:109)
+  - org.hibernate.hql.internal.ast.tree.FromClause.addFromElement(FromClause.java:95)
+  - org.hibernate.hql.internal.ast.HqlSqlWalker.createFromElement(HqlSqlWalker.java:331)
+  - org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElement(HqlSqlBaseWalker.java:3633)
+  - org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromElementList(HqlSqlBaseWalker.java:3522)
+  - org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.fromClause(HqlSqlBaseWalker.java:706)
+  - org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:562)
+  - org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:299)
+  - org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:247)
+  - org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:278)
+  - org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:206)
+  - org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:158)
+  - org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:126)
+  - org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:88)
+  - org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:190)
+  - org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:301)
+  - org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:236)
+  - org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1800)
+  - tfg.model.route.RouteDaoHibernate.findByRouteName(RouteDaoHibernate.java:17)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.lang.reflect.Method.invoke(Method.java:497)
+  - org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+  - org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+  - org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+  - com.sun.proxy.$Proxy61.findByRouteName(Unknown Source)
+  - tfg.model.routeservice.RouteServiceImpl.findRouteByName(RouteServiceImpl.java:23)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.lang.reflect.Method.invoke(Method.java:497)
+  - org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+  - org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+  - org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+  - org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+  - org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+  - com.sun.proxy.$Proxy64.findRouteByName(Unknown Source)
+  - tfg.web.pages.search.SearchRoute.onProvideCompletionsFromNameSearchRoute(SearchRoute.java:77)
+  - tfg.web.pages.search.SearchRoute.dispatchComponentEvent(SearchRoute.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:919)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1104)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:59)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1049)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1046)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerEvent(ComponentPageElementImpl.java:1018)
+  - org.apache.tapestry5.internal.structure.InternalComponentResourcesImpl.triggerEvent(InternalComponentResourcesImpl.java:294)
+  - org.apache.tapestry5.corelib.mixins.Autocomplete.onAutocomplete(Autocomplete.java:169)
+  - org.apache.tapestry5.corelib.mixins.Autocomplete.dispatchComponentEvent(Autocomplete.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:927)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1104)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:59)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1049)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1046)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.internal.services.AjaxComponentEventRequestHandler.handle(AjaxComponentEventRequestHandler.java:109)
+  - org.apache.tapestry5.internal.services.ajax.AjaxFormUpdateFilter.handle(AjaxFormUpdateFilter.java:56)
+  - $ComponentEventRequestHandler_86bfec98afd.handle(Unknown Source)
+  - $ComponentEventRequestHandler_86bfec98ae6.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.AjaxFilter.handle(AjaxFilter.java:42)
+  - $ComponentEventRequestHandler_86bfec98ae7.handle(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$37.handle(TapestryModule.java:2220)
+  - $ComponentEventRequestHandler_86bfec98ae7.handle(Unknown Source)
+  - tfg.web.services.ComponentEventAuthenticationFilter.handle(ComponentEventAuthenticationFilter.java:68)
+  - $ComponentEventRequestHandler_86bfec98ae7.handle(Unknown Source)
+  - $ComponentEventRequestHandler_86bfec98a59.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:43)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:45)
+  - $ComponentRequestHandler_86bfec98a5b.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:39)
+  - $ComponentRequestHandler_86bfec98a5b.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ProductionModeUnknownComponentFilter.handleComponentEvent(ProductionModeUnknownComponentFilter.java:50)
+  - $ComponentRequestHandler_86bfec98a5b.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:55)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:52)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1264)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:47)
+  - $ComponentRequestHandler_86bfec98a5b.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_86bfec98a32.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:48)
+  - $Dispatcher_86bfec98a34.dispatch(Unknown Source)
+  - $Dispatcher_86bfec98a26.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:304)
+  - tfg.web.services.SessionFilter.service(SessionFilter.java:69)
+  - $RequestHandler_86bfec98a27.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_86bfec98a27.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:854)
+  - $RequestHandler_86bfec98a27.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:844)
+  - $RequestHandler_86bfec98a27.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_86bfec98a27.service(Unknown Source)
+  - $RequestHandler_86bfec98a1b.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:255)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_86bfec98a1d.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_86bfec98a18.service(Unknown Source)
+  - $HttpServletRequestHandler_86bfec98a1d.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:804)
+  - $HttpServletRequestHandler_86bfec98a1d.service(Unknown Source)
+  - $HttpServletRequestHandler_86bfec98a17.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1484)
+  - org.springframework.orm.hibernate4.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:152)
+  - org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+  - org.eclipse.jetty.server.Server.handle(Server.java:370)
+  - org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+  - org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+  - org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+  - org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+  - org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+  - org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+  - java.lang.Thread.run(Thread.java:745)
+
+REQUEST:
+
+Basic Information:
+        contextPath: /Tfg
+              flags: XHR, requestedSessionIdValid
+             method: GET
+               path: /search/route.namesearchroute:autocomplete
+             locale: es_ES
+         serverName: localhost
+         remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+             Accept: application/json, text/javascript, */*; q=0.01
+    Accept-Encoding: gzip, deflate, sdch
+    Accept-Language: es-ES,es;q=0.8,en;q=0.6
+         Connection: keep-alive
+             Cookie: JSESSIONID=1tgn5bf2c3y191bi62ry2gq26j; _ym_uid=1459436821835736041
+               Host: localhost:8080
+            Referer: http://localhost:8080/Tfg/search/route
+         User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36
+   X-Requested-With: XMLHttpRequest
+
+Parameters:
+            t:input: Ca
+
+SYSTEM INFORMATION:
+
+Memory:
+       18.646.744 bytes free
+       62.427.136 bytes total
+      259.522.560 bytes max
+
+16 Threads:
+                                           Reference Handler WAITING, daemon, priority 10
+                                                   Finalizer WAITING, daemon, priority 8
+                                           Signal Dispatcher RUNNABLE, daemon, priority 9
+                                             Attach Listener RUNNABLE, daemon
+                                                        main WAITING
+                         Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                      HashSessionScavenger-0 TIMED_WAITING, daemon
+                                      qtp753398-13 Selector0 RUNNABLE
+  qtp753398-14 Acceptor0 SelectChannelConnector@0.0.0.0:8080 RUNNABLE
+                                                qtp753398-15 TIMED_WAITING
+                                                qtp753398-16 TIMED_WAITING
+                                                qtp753398-17 TIMED_WAITING
+                                                qtp753398-18 TIMED_WAITING
+                                                qtp753398-19 TIMED_WAITING
+*                                               qtp753398-20 RUNNABLE
+                                             Console scanner TIMED_WAITING, daemon

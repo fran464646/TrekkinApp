@@ -1,0 +1,243 @@
+EXCEPTION STACK:
+
+
+     Exception type: org.apache.tapestry5.ioc.internal.OperationException
+            Message: could not prepare statement; nested exception is org.hibernate.exception.JDBCConnectionException: could not prepare statement
+              trace: Handling traditional 'chart5' component event request for search/RouteStats.
+                     Triggering event 'chart5' on search/RouteStats
+
+     Exception type: org.apache.tapestry5.runtime.ComponentEventException
+            Message: could not prepare statement; nested exception is org.hibernate.exception.JDBCConnectionException: could not prepare statement
+            context: <EventContext: 1024, 768>
+          eventType: chart5
+
+     Exception type: org.springframework.dao.DataAccessResourceFailureException
+            Message: could not prepare statement; nested exception is org.hibernate.exception.JDBCConnectionException: could not prepare statement
+  mostSpecificCause: java.net.ConnectException: Conexión rehusada
+          rootCause: java.net.ConnectException: Conexión rehusada
+
+     Exception type: org.hibernate.exception.JDBCConnectionException
+            Message: could not prepare statement
+                SQL: /* SELECT u.tweetSentiment,count(*) FROM Tweet u WHERE u.tweetRouteId = :routeId GROUP BY u.tweetSentiment */ select tweet0_.tweetSentiment as col_0_0_, count(*) as col_1_0_ from Tweet tweet0_ where tweet0_.tweetRouteId=? group by tweet0_.tweetSentiment
+           SQLState: 08S01
+          errorCode: 0
+
+     Exception type: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException
+            Message: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+           SQLState: 08S01
+          errorCode: 0
+
+     Exception type: java.net.ConnectException
+            Message: Conexión rehusada
+
+  Stack trace:
+  - java.net.PlainSocketImpl.socketConnect(Native Method)
+  - java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+  - java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+  - java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+  - java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+  - java.net.Socket.connect(Socket.java:589)
+  - com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+  - com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+  - com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253)
+  - com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2286)
+  - com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2085)
+  - com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+  - com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+  - sun.reflect.GeneratedConstructorAccessor87.newInstance(Unknown Source)
+  - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  - java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  - com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+  - com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+  - com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+  - java.sql.DriverManager.getConnection(DriverManager.java:664)
+  - java.sql.DriverManager.getConnection(DriverManager.java:208)
+  - org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153)
+  - org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144)
+  - org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155)
+  - org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120)
+  - org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy$LazyConnectionInvocationHandler.getTargetConnection(LazyConnectionDataSourceProxy.java:403)
+  - org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy$LazyConnectionInvocationHandler.invoke(LazyConnectionDataSourceProxy.java:376)
+  - com.sun.proxy.$Proxy53.prepareStatement(Unknown Source)
+  - org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:162)
+  - org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:186)
+  - org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:160)
+  - org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1884)
+  - org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1861)
+  - org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+  - org.hibernate.loader.Loader.doQuery(Loader.java:909)
+  - org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+  - org.hibernate.loader.Loader.doList(Loader.java:2553)
+  - org.hibernate.loader.Loader.doList(Loader.java:2539)
+  - org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2369)
+  - org.hibernate.loader.Loader.list(Loader.java:2364)
+  - org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:496)
+  - org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:387)
+  - org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:231)
+  - org.hibernate.internal.SessionImpl.list(SessionImpl.java:1264)
+  - org.hibernate.internal.QueryImpl.list(QueryImpl.java:103)
+  - tfg.model.tweet.TweetDaoHibernate.getSentimentCount(TweetDaoHibernate.java:93)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.lang.reflect.Method.invoke(Method.java:498)
+  - org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+  - org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+  - org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+  - com.sun.proxy.$Proxy62.getSentimentCount(Unknown Source)
+  - tfg.model.tweetservice.TweetServiceImpl.getSentimentCount(TweetServiceImpl.java:172)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  - java.lang.reflect.Method.invoke(Method.java:498)
+  - org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+  - org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+  - org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+  - org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+  - org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+  - org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+  - com.sun.proxy.$Proxy68.getSentimentCount(Unknown Source)
+  - tfg.web.pages.search.RouteStats.onChart5(RouteStats.java:228)
+  - tfg.web.pages.search.RouteStats.dispatchComponentEvent(RouteStats.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:919)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1104)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:59)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1049)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1046)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1045)
+  - org.apache.tapestry5.internal.services.ComponentEventRequestHandlerImpl.handle(ComponentEventRequestHandlerImpl.java:73)
+  - org.apache.tapestry5.internal.services.AjaxFilter.handle(AjaxFilter.java:42)
+  - $ComponentEventRequestHandler_859573d5d50.handle(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$37.handle(TapestryModule.java:2220)
+  - $ComponentEventRequestHandler_859573d5d50.handle(Unknown Source)
+  - tfg.web.services.ComponentEventAuthenticationFilter.handle(ComponentEventAuthenticationFilter.java:68)
+  - $ComponentEventRequestHandler_859573d5d50.handle(Unknown Source)
+  - $ComponentEventRequestHandler_859573d5cc5.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:43)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:45)
+  - $ComponentRequestHandler_859573d5cc7.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:39)
+  - $ComponentRequestHandler_859573d5cc7.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ProductionModeUnknownComponentFilter.handleComponentEvent(ProductionModeUnknownComponentFilter.java:50)
+  - $ComponentRequestHandler_859573d5cc7.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:55)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:52)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1264)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:47)
+  - $ComponentRequestHandler_859573d5cc7.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_859573d5c9b.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:48)
+  - $Dispatcher_859573d5c9d.dispatch(Unknown Source)
+  - $Dispatcher_859573d5c8f.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:304)
+  - tfg.web.services.SessionFilter.service(SessionFilter.java:69)
+  - $RequestHandler_859573d5c90.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_859573d5c90.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:854)
+  - $RequestHandler_859573d5c90.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:844)
+  - $RequestHandler_859573d5c90.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_859573d5c90.service(Unknown Source)
+  - $RequestHandler_859573d5c84.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:255)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_859573d5c86.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_859573d5c81.service(Unknown Source)
+  - $HttpServletRequestHandler_859573d5c86.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:804)
+  - $HttpServletRequestHandler_859573d5c86.service(Unknown Source)
+  - $HttpServletRequestHandler_859573d5c80.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1484)
+  - org.springframework.orm.hibernate4.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:152)
+  - org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+  - org.eclipse.jetty.server.Server.handle(Server.java:370)
+  - org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+  - org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+  - org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+  - org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+  - org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+  - org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+  - java.lang.Thread.run(Thread.java:745)
+
+REQUEST:
+
+Basic Information:
+        contextPath: /Tfg
+              flags: requestedSessionIdValid
+             method: GET
+               path: /search/routestats:chart5/1024/768
+             locale: es_ES
+         serverName: localhost
+         remoteHost: 127.0.0.1
+
+Headers:
+             Accept: image/png,image/*;q=0.8,*/*;q=0.5
+    Accept-Encoding: gzip, deflate
+    Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3
+         Connection: keep-alive
+             Cookie: JSESSIONID=asd6bf6agbzv1k741ru6bytfg
+               Host: localhost:8080
+            Referer: http://localhost:8080/Tfg/search/routestats/1
+         User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:44.0) Gecko/20100101 Firefox/44.0
+
+Parameters:
+               t:ac: 1
+
+SYSTEM INFORMATION:
+
+Memory:
+      640.462.240 bytes free
+      690.487.296 bytes total
+    1.810.366.464 bytes max
+
+16 Threads:
+                                               Reference Handler WAITING, daemon, priority 10
+                                                       Finalizer WAITING, daemon, priority 8
+                                               Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                            main WAITING
+                             Abandoned connection cleanup thread TIMED_WAITING, daemon
+                             Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                          HashSessionScavenger-0 TIMED_WAITING, daemon
+                                      qtp1510731556-18 Selector0 RUNNABLE
+  qtp1510731556-19 Acceptor0 SelectChannelConnector@0.0.0.0:8080 RUNNABLE
+                                                qtp1510731556-20 TIMED_WAITING
+                                                qtp1510731556-21 TIMED_WAITING
+                                                qtp1510731556-22 TIMED_WAITING
+                                                qtp1510731556-23 WAITING
+*                                               qtp1510731556-24 RUNNABLE
+                                                qtp1510731556-25 TIMED_WAITING
+                                                 Console scanner TIMED_WAITING, daemon

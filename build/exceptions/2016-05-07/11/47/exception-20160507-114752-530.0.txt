@@ -1,0 +1,191 @@
+EXCEPTION STACK:
+
+
+             Exception type: org.apache.tapestry5.ioc.internal.OperationException
+                    Message: Exception assembling root component of page search/TweetDetails: Could not convert 'tweet.creationDate.time' into a component parameter binding: Exception generating conduit for expression 'tweet.creationDate.time': Class tfg.model.tweet.Tweet does not contain a property (or public field) named 'creationDate'.
+                      trace: Handling page render request for page search/TweetDetails
+                             Constructing instance of page class tfg.web.pages.search.TweetDetails
+                             Assembling root component for page search/TweetDetails
+
+             Exception type: java.lang.RuntimeException
+                    Message: Exception assembling root component of page search/TweetDetails: Could not convert 'tweet.creationDate.time' into a component parameter binding: Exception generating conduit for expression 'tweet.creationDate.time': Class tfg.model.tweet.Tweet does not contain a property (or public field) named 'creationDate'.
+
+             Exception type: org.apache.tapestry5.ioc.internal.util.TapestryException
+                    Message: Could not convert 'tweet.creationDate.time' into a component parameter binding: Exception generating conduit for expression 'tweet.creationDate.time': Class tfg.model.tweet.Tweet does not contain a property (or public field) named 'creationDate'.
+                   location: classpath:tfg/web/pages/search/TweetDetails.tml, line 17
+
+             Exception type: org.apache.tapestry5.internal.services.PropertyExpressionException
+                    Message: Exception generating conduit for expression 'tweet.creationDate.time': Class tfg.model.tweet.Tweet does not contain a property (or public field) named 'creationDate'.
+                 expression: tweet.creationDate.time
+
+             Exception type: org.apache.tapestry5.ioc.util.UnknownValueException
+                    Message: Class tfg.model.tweet.Tweet does not contain a property (or public field) named 'creationDate'.
+            availableValues: AvailableValues[Properties (and public fields): class, retweetedId, tweetCreationDate, tweetFavourites, tweetId, tweetIsFavourite, tweetIsRetweeted, tweetLatitude, tweetLongitude, tweetRetweets, tweetRouteId, tweetSentiment, tweetText, tweetUserId]
+
+  Stack trace:
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.findPropertyAdapter(PropertyConduitSourceImpl.java:1167)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.buildPropertyAccessTerm(PropertyConduitSourceImpl.java:1135)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.buildTerm(PropertyConduitSourceImpl.java:1124)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.buildTerm(PropertyConduitSourceImpl.java:1043)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.analyzeDerefNode(PropertyConduitSourceImpl.java:1036)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.implementNavMethodAndAccessors(PropertyConduitSourceImpl.java:371)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl$PropertyConduitBuilder.transform(PropertyConduitSourceImpl.java:278)
+  - org.apache.tapestry5.plastic.PlasticManager.createProxy(PlasticManager.java:253)
+  - org.apache.tapestry5.plastic.PlasticManager.createProxy(PlasticManager.java:231)
+  - org.apache.tapestry5.ioc.internal.services.PlasticProxyFactoryImpl.createProxy(PlasticProxyFactoryImpl.java:75)
+  - $PlasticProxyFactory_76303095101.createProxy(Unknown Source)
+  - $PlasticProxyFactory_76303095100.createProxy(Unknown Source)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl.build(PropertyConduitSourceImpl.java:1460)
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl.create(PropertyConduitSourceImpl.java:1374)
+  - $PropertyConduitSource_7630309513d.create(Unknown Source)
+  - org.apache.tapestry5.internal.bindings.PropBindingFactory.newBinding(PropBindingFactory.java:49)
+  - $BindingFactory_7630309513e.newBinding(Unknown Source)
+  - $BindingFactory_76303095135.newBinding(Unknown Source)
+  - org.apache.tapestry5.internal.services.BindingSourceImpl.newBinding(BindingSourceImpl.java:81)
+  - $BindingSource_763030950f7.newBinding(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageElementFactoryImpl.newBinding(PageElementFactoryImpl.java:180)
+  - $PageElementFactory_76303095123.newBinding(Unknown Source)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$10.execute(PageLoaderImpl.java:883)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.runActions(ComponentAssemblerImpl.java:229)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.performAssembleRootComponent(ComponentAssemblerImpl.java:105)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.access$000(ComponentAssemblerImpl.java:37)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl$1.invoke(ComponentAssemblerImpl.java:81)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl$1.invoke(ComponentAssemblerImpl.java:78)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.internal.pageload.ComponentAssemblerImpl.assembleRootComponent(ComponentAssemblerImpl.java:76)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$3.invoke(PageLoaderImpl.java:197)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl$3.invoke(PageLoaderImpl.java:190)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.internal.pageload.PageLoaderImpl.loadPage(PageLoaderImpl.java:189)
+  - $PageLoader_7630309510d.loadPage(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageSourceImpl.getPage(PageSourceImpl.java:104)
+  - $PageSource_7630309510c.getPage(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestPageCacheImpl.get(RequestPageCacheImpl.java:86)
+  - $RequestPageCache_7630309510b.get(Unknown Source)
+  - $RequestPageCache_76303095103.get(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentSourceImpl.getPage(ComponentSourceImpl.java:83)
+  - $ComponentSource_763030950bc.getPage(Unknown Source)
+  - tfg.web.services.AuthenticationValidator.checkForPage(AuthenticationValidator.java:24)
+  - tfg.web.services.PageRenderAuthenticationFilter.handle(PageRenderAuthenticationFilter.java:33)
+  - $PageRenderRequestHandler_7630309510a.handle(Unknown Source)
+  - $PageRenderRequestHandler_76303095105.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handlePageRender(ComponentRequestHandlerTerminator.java:48)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handlePageRender(DeferredResponseRenderer.java:52)
+  - $ComponentRequestHandler_76303095106.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handlePageRender(InitializeActivePageName.java:47)
+  - $ComponentRequestHandler_76303095106.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.ProductionModeUnknownComponentFilter.handlePageRender(ProductionModeUnknownComponentFilter.java:62)
+  - $ComponentRequestHandler_76303095106.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$2.run(RequestOperationTracker.java:73)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.run(RegistryImpl.java:1252)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handlePageRender(RequestOperationTracker.java:66)
+  - $ComponentRequestHandler_76303095106.handlePageRender(Unknown Source)
+  - $ComponentRequestHandler_763030950da.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderDispatcher.dispatch(PageRenderDispatcher.java:52)
+  - $Dispatcher_763030950dc.dispatch(Unknown Source)
+  - $Dispatcher_763030950ce.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:304)
+  - tfg.web.services.SessionFilter.service(SessionFilter.java:69)
+  - $RequestHandler_763030950cf.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_763030950cf.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:854)
+  - $RequestHandler_763030950cf.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:844)
+  - $RequestHandler_763030950cf.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_763030950cf.service(Unknown Source)
+  - $RequestHandler_763030950c3.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:255)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_763030950c5.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_763030950c0.service(Unknown Source)
+  - $HttpServletRequestHandler_763030950c5.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:804)
+  - $HttpServletRequestHandler_763030950c5.service(Unknown Source)
+  - $HttpServletRequestHandler_763030950bf.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1484)
+  - org.springframework.orm.hibernate4.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:152)
+  - org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+  - org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+  - org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+  - org.eclipse.jetty.server.Server.handle(Server.java:370)
+  - org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+  - org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+  - org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+  - org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+  - org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+  - org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+  - java.lang.Thread.run(Thread.java:745)
+
+REQUEST:
+
+Basic Information:
+                contextPath: /Tfg
+                      flags: requestedSessionIdValid
+                     method: GET
+                       path: /search/tweetdetails/726929829182996480
+                     locale: es_ES
+                 serverName: localhost
+                 remoteHost: 0:0:0:0:0:0:0:1
+
+Headers:
+                     Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+            Accept-Encoding: gzip, deflate, sdch
+            Accept-Language: es-ES,es;q=0.8
+                 Connection: keep-alive
+                     Cookie: JSESSIONID=1ih2n9hyfnf0eq5cmvjsy4uuc
+                       Host: localhost:8080
+                    Referer: http://localhost:8080/Tfg/search/edtweets/0/1
+  Upgrade-Insecure-Requests: 1
+                 User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/49.0.2623.108 Chrome/49.0.2623.108 Safari/537.36
+
+SYSTEM INFORMATION:
+
+Memory:
+      425.351.744 bytes free
+      702.021.632 bytes total
+    1.810.366.464 bytes max
+
+18 Threads:
+                                              Reference Handler WAITING, daemon, priority 10
+                                                      Finalizer WAITING, daemon, priority 8
+                                              Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                 process reaper TIMED_WAITING, daemon, priority 10
+                                                 process reaper TIMED_WAITING, daemon, priority 10
+                                                           main WAITING
+                            Abandoned connection cleanup thread TIMED_WAITING, daemon
+                            Abandoned connection cleanup thread TIMED_WAITING, daemon
+                                         HashSessionScavenger-0 TIMED_WAITING, daemon
+                                                qtp814473635-15 TIMED_WAITING
+                                      qtp814473635-16 Selector0 RUNNABLE
+  qtp814473635-17 Acceptor0 SelectChannelConnector@0.0.0.0:8080 RUNNABLE
+                                                qtp814473635-18 TIMED_WAITING
+                                                qtp814473635-19 TIMED_WAITING
+                                                qtp814473635-20 TIMED_WAITING
+*                                               qtp814473635-21 RUNNABLE
+                                                qtp814473635-22 TIMED_WAITING
+                                                Console scanner TIMED_WAITING, daemon

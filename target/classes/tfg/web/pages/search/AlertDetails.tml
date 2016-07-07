@@ -1,0 +1,53 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter"
+	t:type="Layout" t:title="title">
+
+<body background="http://www.kakslauttanen.fi/assets/2013/10/SUMMERAUTUMN_Patikointi_1.jpg" style="background-attachment: fixed;background-position: center; background-repeat: no-repeat; background-size: cover;">
+	<a t:type="pagelink" t:page="search/showalerts" href="#">${message:alerts}</a><br/><br/>
+	<form t:type="Form" class="form-horizontal" t:id="routeDetailsForm">
+	<t:if test="route">
+			<table class="table table-striped table-hover">	
+				<tbody>
+			        <tr>
+			            <th>${message:alertDescription}</th>
+			            <td id = "description">${alert.alertDescription}</td>
+			        </tr>		
+			        <tr>
+			            <th>${message:alertDate}</th>
+			            <td id = "alertDate">${alert.alertDate}</td>
+			        </tr>		
+			        <tr>
+			            <th>${message:alertRouteName}</th>
+			            <td>
+					    	<a id = "nombreRuta" href="#" t:type="PageLink" t:page="search/routedetails"
+					    	t:context="alert.alertRouteId">
+					    	${route.routeName}
+					    	</a>
+					    </td>
+			        </tr>		
+			        <tr>
+			            <th>${message:alertPositive}</th>
+			            <td id = "alertPositive">${stat.statPNumber}</td>
+			        </tr>			
+			        <tr>
+			            <th>${message:alertNegative}</th>
+			            <td id = "alertNegative">${stat.statNNumber}</td>
+			        </tr>	
+			        <tr>
+			            <th>${message:alertBalance}</th>
+			            <td id = "alertBalance">${stat.statOpinionBalance}</td>
+			        </tr>
+			        <tr>
+			            <th>${message:alertCompleteDescription}</th>
+			            <td id = "completeDescription">${alert.alertCompleteDescription}</td>
+			        </tr>		
+		        </tbody>	
+			</table>
+	<p:else>
+		<h4 class="alert alert-danger text-center">${message:routeNotFound}</h4>		       		
+	</p:else>
+
+	</t:if>
+	</form>
+</body>
+</html>

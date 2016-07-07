@@ -1,0 +1,9 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="Layout" t:title="title" showTitleInBody="false">
+
+<h2 id="head" class="text-center">${message:welcome}</h2>
+ <body background="http://www.kakslauttanen.fi/assets/2013/10/SUMMERAUTUMN_Patikointi_1.jpg" style="background-attachment: fixed;background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+ </body>
+</html>

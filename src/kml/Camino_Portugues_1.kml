@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Camino Portugues 1</name>
+<description><![CDATA[<b>El Camino Portugues<br>Valenca - Santiago<br><br><a href="http://www.ElCaminoSantiago.com">www.ElCaminoSantiago.com</a></b><br>Complete Resources for the<br>Pilgrimage Road to Santiago<br><br><b><a href="http://www.ElCaminoSantiago.com/Camino-Santiago-Maps.htm">Maps for El Camino Santiago</a><br><br><a href="http://www.ElCaminoSantiago.com/Weather-Camino-Santiago.htm">Weather for El Camino Santiago</a></b><br><br>]]></description>
+	<StyleMap id="Camino7">
+	</StyleMap>
+	<Style id="Camino7">
+		<IconStyle>
+			<Icon>
+			<href>http://www.elcaminosantiago.com/WebArt/Shell-4-032-Red.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ff00ffff</color>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>3</width>
+		</LineStyle>
+	</Style>
+  <Folder>
+    <name>Camino Portugues Waypoints</name>
+    <Placemark>
+      <name>Albergue S. Teotonio</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6463,42.02534000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Passagem pelo C.H. Valenca</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.645149999999999,42.02838,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino - Saida Portugal</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.644780000000001,42.03422,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino - Entrada em Espanha</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64833,42.03766,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Marco Inicial em TUI</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64475,42.04018000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Catedral de Tui</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6449,42.04598,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cafe</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64461,42.04624,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Saida de Tuy</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.640660000000001,42.05206,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.639380000000001,42.07642000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.63068,42.10382,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cafe bar Novo Cazador</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.630800000000001,42.10678,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Passagem pela Zona Industrial</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.626670000000001,42.12135,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fonte em Porrinho</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.61971,42.15697,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Praca em Porrinho</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.621180000000001,42.16196,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Passagem Paralela a estrada</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.61595,42.17532,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino - Encontro com Holandes</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.611649999999999,42.18815000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60909,42.1919,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60909,42.19769,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Albergue de MOS</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.606500000000001,42.2045,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fim da subida em MOS</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60904,42.20898,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Restaurante apos MOS (Ramada)</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.607250000000001,42.21862000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino em MOS</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.607810000000001,42.21986,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino - Corta Mato</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60778,42.22764,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino em Santiaguinho de Antas - Marcos</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.610580000000001,42.22891,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Descida para Redondela</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.610440000000001,42.25502,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Antes da estrada em Redondela</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.611219999999999,42.27062,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Farmacia</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60979,42.28142,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Irish Bar - Guinness</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6099,42.28145,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Albergue de Redondela</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60881,42.2822,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Esplanada em Redondela - Tapas</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60901,42.28265,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Passagem apos redondela</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.605750000000001,42.30263,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Inicio da subida apos redondela</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60398,42.30804000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Subida apos redondela</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60487,42.3114,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino no Monte</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.606930000000002,42.32025000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Final da descida</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.607749999999999,42.32560000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>PonteSampaio</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.60707,42.34578000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.611120000000001,42.35017000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Inicio de Camino Romano</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.61225,42.3514,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino Romano</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.614560000000001,42.3546,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ponto de descanso na Estrada</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.618,42.36455,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fim do Camino romano</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.61685,42.365,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino no Monte</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.62012,42.36752,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.63355,42.41583,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Albergue de Pontevedra</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6366,42.41969,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>C.Comercial - Coronel Tapioca</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.63663,42.42205000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Virgem Peregrina</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.643940000000001,42.4308,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Esplanada</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64425,42.4317,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>&quot;Camino Iluminado&quot;</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6454,42.43249,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Praca Alternativa</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64411,42.43273,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Igreja de S. Bartolomeu</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64275,42.43299,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Saida de Pontevedra</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64335,42.44213,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Saida de Pontevedra - Junto ao comboio</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6419,42.45209,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.646369999999999,42.46482,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.648809999999999,42.47058,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.650729999999999,42.48653,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.648899999999999,42.49311,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino - Travessia da linha de Comboio</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64992,42.49958,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.65109,42.50422,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fonte - Ponto de Paragem</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6496,42.50581,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino - Final da Descida</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64954,42.5144,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.645960000000001,42.58584,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Esplanada em Caldas de Reis</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.642899999999999,42.60331000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tanque de agua quente</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64344,42.60364,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Albergue (Fechado)</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64331,42.60399,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Colegio da Encarnacao</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.64339,42.60601,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ponte de Cesures</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.654970000000001,42.72538,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cafe O Santiaguinho</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.66104,42.73815,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Camino</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.654199999999999,42.75942,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>A escravitude</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.65016,42.78299,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Albergue de Teo</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.623139999999999,42.81042,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cafe de Teo</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.6195,42.81269,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Restaurante em Teo</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.61685,42.81544,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Passagem por Milladoiro</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.580690000000001,42.85477000000001,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Entrada em Santiago (linha de Comboio</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.5749,42.86537,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Passagem em Frente ao Hospital</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.56523,42.86788,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Local do Pequeno Almoco</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.54551,42.87753,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Santiago Praza do Obradoiro</name>
+      <styleUrl>#Camino7</styleUrl>
+      <Point>
+        <coordinates>-8.545260000000001,42.88033,0</coordinates>
+      </Point>
+    </Placemark>
+  </Folder>
+</Document>
+</kml>
