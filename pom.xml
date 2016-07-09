@@ -380,10 +380,6 @@
 					<orderFile>ascending</orderFile>
 					<fileset>
 						<basedir>${basedir}</basedir>
-						<includes>
-							<include>src/sql/${dataSource.createTablesScript}</include>
-							<include>src/sql/${dataSource.createDataScript}</include>
-						</includes>
 					</fileset>
 				</configuration>
 				<executions>
@@ -396,15 +392,12 @@
 						<configuration>
 							<driver>${jdbcDriver.className}</driver>
 							<url>${testDataSource.url}</url>
-							<username>${testDataSource.user}</username>
-							<password>${testDataSource.password}</password>
+							<username>${dataSource.user}</username>
+							<password>${dataSource.password}</password>
 							<autocommit>true</autocommit>
 							<onError>continue</onError>
 							<fileset>
 								<basedir>${basedir}</basedir>
-								<includes>
-									<include>src/sql/${dataSource.createTablesScript}</include>
-								</includes>
 							</fileset>
 						</configuration>
 					</execution>
