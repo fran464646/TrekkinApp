@@ -87,16 +87,20 @@ public class UserProfileServiceTest {
         assertEquals(userProfile, userProfile2);
 
     }
-
-    @Test(expected = IncorrectPasswordException.class)
-    public void testLoginIncorrectPasword() throws IncorrectPasswordException,
+    
+    @Test
+    public void testLoginIncorrectPasword() throws
             InstanceNotFoundException {
 
         String clearPassword = "userPassword";
         UserProfile userProfile = registerUser("user", clearPassword);
 
-        userService.login(userProfile.getLoginName(), 'X' + clearPassword,
-             false);
+        try {
+			userService.login(userProfile.getLoginName(), 'X' + clearPassword,
+			     false);
+		} catch (IncorrectPasswordException e) {
+			e.getLoginName();
+		}
 
     }
 

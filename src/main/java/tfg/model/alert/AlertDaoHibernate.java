@@ -30,22 +30,22 @@ public class AlertDaoHibernate extends
 		Query tmpQuery;
 		if (dateStart==null && dateEnd==null){
 			tmpQuery = getSession().createQuery(
-	    			"SELECT a FROM Alert a WHERE a.alertRouteId = :routeId AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
-	    			.setParameter("routeId", routeId).setParameter("userId", userId).setFirstResult(startIndex).setMaxResults(count);
+	    			"SELECT a FROM Alert a WHERE a.alertRouteId = :alertRouteId AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
+	    			.setParameter("alertRouteId", routeId).setParameter("userId", userId).setFirstResult(startIndex).setMaxResults(count);
 		}else{
 			if (dateStart==null){
 				tmpQuery = getSession().createQuery(
-						"SELECT a FROM Alert a WHERE a.alertRouteId = :routeId AND a.alertDate<= :dateEnd AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
-		    			.setParameter("routeId", routeId).setParameter("userId", userId).setParameter("dateEnd", dateEnd).setFirstResult(startIndex).setMaxResults(count);
+						"SELECT a FROM Alert a WHERE a.alertRouteId = :alertRouteId AND a.alertDate<= :dateEnd AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
+		    			.setParameter("alertRouteId", routeId).setParameter("userId", userId).setParameter("dateEnd", dateEnd).setFirstResult(startIndex).setMaxResults(count);
 			}else{
 				if (dateEnd==null){
 					tmpQuery = getSession().createQuery(
 							"SELECT a FROM Alert a WHERE a.alertRouteId = :alertRouteId AND a.alertDate>= :dateStart AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
-			    			.setParameter("routeId", routeId).setParameter("userId", userId).setParameter("dateStat", dateEnd).setFirstResult(startIndex).setMaxResults(count);
+			    			.setParameter("alertRouteId", routeId).setParameter("userId", userId).setParameter("dateStart", dateStart).setFirstResult(startIndex).setMaxResults(count);
 				}else{
 					tmpQuery = getSession().createQuery(
-			    			"SELECT a FROM Alert a WHERE a.alertRouteId = :routeId AND a.alertDate>= :dateStart AND a.alertDate<= :dateEnd AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
-			    			.setParameter("routeId", routeId).setParameter("userId", userId).setParameter("dateStart", dateStart).setParameter("dateEnd", dateEnd).setFirstResult(startIndex).setMaxResults(count);
+			    			"SELECT a FROM Alert a WHERE a.alertRouteId = :alertRouteId AND a.alertDate>= :dateStart AND a.alertDate<= :dateEnd AND a.alertUserId = :userId ORDER BY a.alertDate DESC")
+			    			.setParameter("alertRouteId", routeId).setParameter("userId", userId).setParameter("dateStart", dateStart).setParameter("dateEnd", dateEnd).setFirstResult(startIndex).setMaxResults(count);
 				}
 			}
 		}
@@ -69,7 +69,7 @@ public class AlertDaoHibernate extends
 				if (dateEnd==null){
 					tmpQuery = getSession().createQuery(
 							"SELECT a FROM Alert a WHERE a.alertDate>= :dateStart AND (a.alertUserId = :userId OR a.alertUserId = -1) ORDER BY a.alertDate DESC").setParameter("userId", userId)
-			    			.setParameter("dateStat", dateEnd).setFirstResult(startIndex).setMaxResults(count);
+			    			.setParameter("dateStart", dateStart).setFirstResult(startIndex).setMaxResults(count);
 				}else{
 					tmpQuery = getSession().createQuery(
 			    			"SELECT a FROM Alert a WHERE a.alertDate>= :dateStart AND a.alertDate<= :dateEnd AND (a.alertUserId = :userId OR a.alertUserId = -1) ORDER BY a.alertDate DESC").setParameter("userId", userId)

@@ -18,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 import tfg.model.alert.Alert;
 import tfg.model.alert.AlertDao;
 import tfg.model.alertservice.AlertService;
+import tfg.model.parameter.Parameter;
+import tfg.model.parameter.ParameterDao;
+import tfg.model.parameterservice.ParameterService;
 import tfg.model.route.Route;
 import tfg.model.route.RouteDao;
 import tfg.model.stat.Stat;
@@ -27,6 +30,7 @@ import tfg.model.userprofileservice.UserProfileDetails;
 import tfg.model.userprofileservice.UserProfileService;
 import tfg.model.util.DuplicateInstanceException;
 import tfg.model.util.InstanceNotFoundException;
+import tfg.model.util.ParameterBlock;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { SPRING_CONFIG_FILE, SPRING_CONFIG_TEST_FILE })
@@ -38,6 +42,12 @@ public class AlertServiceTest {
 	
 	@Autowired
 	private AlertService alertService;
+	
+	@Autowired
+	private ParameterService parameterService;
+	
+	@Autowired
+	private ParameterDao parameterDAO;
 	
 	@Autowired
 	private RouteDao routeDao;
@@ -81,7 +91,7 @@ public class AlertServiceTest {
 		routeDao.save(route);
 		Stat stat=new Stat();
 		stat.setStatDate(date);
-		stat.setStatNewNegative(false);
+		stat.setStatNewNegative(true);
 		stat.setStatNNumber(14l);
 		stat.setStatOldMiddle(5.3);
 		stat.setStatOpinionBalance(-5l);
@@ -146,6 +156,8 @@ public class AlertServiceTest {
 		alertService.visitAlert(alert.getAlertId());
 		alertBD=alertService.findAlert(alert.getAlertId());
 		assertTrue(alertBD.getAlertVisited());
+		alertService.findAlert(-1l);
+		alertService.visitAlert(-1l);
 	}
 	
 	@Test
@@ -252,7 +264,7 @@ public class AlertServiceTest {
 		routeDao.save(route);
 		Stat stat=new Stat();
 		stat.setStatDate(date);
-		stat.setStatNewNegative(false);
+		stat.setStatNewNegative(true);
 		stat.setStatNNumber(14l);
 		stat.setStatOldMiddle(5.3);
 		stat.setStatOpinionBalance(-5l);
@@ -260,6 +272,38 @@ public class AlertServiceTest {
 		stat.setStatRouteId(route.getRouteId());
 		stat.setStatTipicalDeviation(3.6);
 		statDao.save(stat);
+		Parameter parameter=new Parameter();
+		parameter.setParameterKey("positiveOpinions");
+		parameter.setParameterDescription("");
+		parameter.setParameterRouteId(route.getRouteId());
+		parameter.setParameterRouteName(route.getRouteName());
+		parameter.setParameterUserId(userProfile.getUserProfileId());
+		parameter.setParameterValue(5l);
+		parameterDAO.save(parameter);
+		Parameter parameter1=new Parameter();
+		parameter1.setParameterKey("negativeOpinions");
+		parameter1.setParameterDescription("");
+		parameter1.setParameterRouteId(route.getRouteId());
+		parameter1.setParameterRouteName(route.getRouteName());
+		parameter1.setParameterUserId(userProfile.getUserProfileId());
+		parameter1.setParameterValue(5l);
+		parameterDAO.save(parameter1);
+		Parameter parameter2=new Parameter();
+		parameter2.setParameterKey("positiveBalance");
+		parameter2.setParameterDescription("");
+		parameter2.setParameterRouteId(route.getRouteId());
+		parameter2.setParameterRouteName(route.getRouteName());
+		parameter2.setParameterUserId(userProfile.getUserProfileId());
+		parameter2.setParameterValue(-6l);
+		parameterDAO.save(parameter2);
+		Parameter parameter3=new Parameter();
+		parameter3.setParameterKey("negativeBalance");
+		parameter3.setParameterDescription("");
+		parameter3.setParameterRouteId(route.getRouteId());
+		parameter3.setParameterRouteName(route.getRouteName());
+		parameter3.setParameterUserId(userProfile.getUserProfileId());
+		parameter3.setParameterValue(-4l);
+		parameterDAO.save(parameter3);
 		Alert alert=new Alert();
 		alert.setAlertCompleteDescription("Description");
 		alert.setAlertDate(date);
@@ -285,8 +329,8 @@ public class AlertServiceTest {
 		alert1.setAlertVisited(false);
 		alertDao.save(alert1);
 		alertService.generateAlerts(userProfile.getUserProfileId(), route.getRouteId());
-		alerts = alertService.findAlertByDate(userProfile.getUserProfileId(), 0, 3, dateStart, dateEnd).getAlerts();
-		assertTrue(alerts.size()==3);
+		alerts = alertService.findAlertByDate(userProfile.getUserProfileId(), 0, 7, dateStart, dateEnd).getAlerts();
+		assertTrue(alerts.size()==7);
 	}
 
 

@@ -77,20 +77,11 @@ public class TweetTest {
 		tweets=tweetDao.findByRoute(route.getRouteId(),0,1,dateStart,dateEnd);
 		assertEquals(tweets.size(),1);
 		assertEquals(tweets.get(0),tweet);
-		Tweet tweet1=new Tweet();
-		tweet1.setRetweetedId(1l);
-		tweet1.setTweetCreationDate(new Date());
-		tweet1.setTweetFavourites(1);
-		tweet1.setTweetIsFavourite(false);
-		tweet1.setTweetIsRetweeted(false);
-		tweet1.setTweetLatitude(1.23);
-		tweet1.setTweetLongitude(2.05);
-		tweet1.setTweetRetweets(2);
-		tweet1.setTweetRouteId(route.getRouteId());
-		tweet1.setTweetSentiment("P");
-		tweet1.setTweetText("Mola pilon");
-		tweet1.setTweetId(2l);
-		tweet1.setTweetUserId(1l);
+		Tweet tweet1=new Tweet(99999l, "Mola pilon", new Date(),
+				1l, 1, 1.23,
+				2.05, 2, 1l,
+				false, false,
+				route.getRouteId(), "P");
 		tweetDao.save(tweet1);
 		tweets=tweetDao.findByRoute(route.getRouteId());
 		assertEquals(tweets.size(),2);
@@ -100,6 +91,18 @@ public class TweetTest {
 		assertEquals(tweets.size(),1);
 		assertEquals(tweets.get(0),tweet);
 		tweets=tweetDao.findByRoute(route.getRouteId(),0,2,dateStart,dateEnd);
+		assertEquals(tweets.size(),2);
+		assertEquals(tweets.get(0),tweet);
+		assertEquals(tweets.get(1),tweet1);
+		tweets=tweetDao.findByRoute(route.getRouteId(),0,2,null,dateEnd);
+		assertEquals(tweets.size(),2);
+		assertEquals(tweets.get(0),tweet);
+		assertEquals(tweets.get(1),tweet1);
+		tweets=tweetDao.findByRoute(route.getRouteId(),0,2,dateStart,null);
+		assertEquals(tweets.size(),2);
+		assertEquals(tweets.get(0),tweet);
+		assertEquals(tweets.get(1),tweet1);
+		tweets=tweetDao.findByRoute(route.getRouteId(),0,2,null,null);
 		assertEquals(tweets.size(),2);
 		assertEquals(tweets.get(0),tweet);
 		assertEquals(tweets.get(1),tweet1);
@@ -144,6 +147,15 @@ public class TweetTest {
 		tweet.setTweetUserId(1l);
 		tweetDao.save(tweet);
 		List<SentimentsCount> sentiments=tweetDao.getSentimentCount(route.getRouteId(),dateStart,dateEnd);
+		assertEquals(sentiments.size(),1);
+		assertEquals(sentiments.get(0).getSentiment(),"P");
+		sentiments=tweetDao.getSentimentCount(route.getRouteId(),null,dateEnd);
+		assertEquals(sentiments.size(),1);
+		assertEquals(sentiments.get(0).getSentiment(),"P");
+		sentiments=tweetDao.getSentimentCount(route.getRouteId(),dateStart,null);
+		assertEquals(sentiments.size(),1);
+		assertEquals(sentiments.get(0).getSentiment(),"P");
+		sentiments=tweetDao.getSentimentCount(route.getRouteId(),null,null);
 		assertEquals(sentiments.size(),1);
 		assertEquals(sentiments.get(0).getSentiment(),"P");
 		assertTrue(Long.compare(sentiments.get(0).getCountSentiment(), 1l)==0);
@@ -215,6 +227,15 @@ public class TweetTest {
 		tweet.setTweetUserId(1l);
 		tweetDao.save(tweet);
 		List<Result> sentiments=tweetDao.getSentimentsByDate(route.getRouteId(), "P",dateStart,dateEnd);
+		assertEquals(sentiments.size(),1);
+		assertTrue(Long.compare(sentiments.get(0).getCount(),1l)==0);
+		sentiments=tweetDao.getSentimentsByDate(route.getRouteId(), "P",null,dateEnd);
+		assertEquals(sentiments.size(),1);
+		assertTrue(Long.compare(sentiments.get(0).getCount(),1l)==0);
+		sentiments=tweetDao.getSentimentsByDate(route.getRouteId(), "P",dateStart,null);
+		assertEquals(sentiments.size(),1);
+		assertTrue(Long.compare(sentiments.get(0).getCount(),1l)==0);
+		sentiments=tweetDao.getSentimentsByDate(route.getRouteId(), "P",null,null);
 		assertEquals(sentiments.size(),1);
 		assertTrue(Long.compare(sentiments.get(0).getCount(),1l)==0);
 		Tweet tweet1=new Tweet();
@@ -323,6 +344,15 @@ public class TweetTest {
 		List<Tweet> tweets = tweetDao.getTweetsByDateAndSentiment(route.getRouteId(), "P", dateStart, dateEnd);
 		assertEquals(tweets.get(0),tweet);
 		assertEquals(tweets.get(1),tweet1);
+		tweets = tweetDao.getTweetsByDateAndSentiment(route.getRouteId(), "P", null, dateEnd);
+		assertEquals(tweets.get(0),tweet);
+		assertEquals(tweets.get(1),tweet1);
+		tweets = tweetDao.getTweetsByDateAndSentiment(route.getRouteId(), "P", dateStart, null);
+		assertEquals(tweets.get(0),tweet);
+		assertEquals(tweets.get(1),tweet1);
+		tweets = tweetDao.getTweetsByDateAndSentiment(route.getRouteId(), "P", null, null);
+		assertEquals(tweets.get(0),tweet);
+		assertEquals(tweets.get(1),tweet1);
 		tweets = tweetDao.getTweetsByDateAndSentiment(route.getRouteId(), "N", dateStart, dateEnd);
 		assertEquals(tweets.get(0),tweet2);
 		assertEquals(tweets.get(1),tweet3);
@@ -415,6 +445,15 @@ public class TweetTest {
 		assertTrue(sentiments.size()==1);
 		assertTrue(sentiments.get(0).getCount()==2);
 		sentiments = tweetDao.getSentimentsByDay(route.getRouteId(), "N", dateStart, dateEnd);
+		assertTrue(sentiments.size()==1);
+		assertTrue(sentiments.get(0).getCount()==2);
+		sentiments = tweetDao.getSentimentsByDay(route.getRouteId(), "N", null, dateEnd);
+		assertTrue(sentiments.size()==1);
+		assertTrue(sentiments.get(0).getCount()==2);
+		sentiments = tweetDao.getSentimentsByDay(route.getRouteId(), "N", dateStart, null);
+		assertTrue(sentiments.size()==1);
+		assertTrue(sentiments.get(0).getCount()==2);
+		sentiments = tweetDao.getSentimentsByDay(route.getRouteId(), "N", null, null);
 		assertTrue(sentiments.size()==1);
 		assertTrue(sentiments.get(0).getCount()==2);
 	}

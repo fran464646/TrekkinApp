@@ -116,6 +116,8 @@ public class StatServiceTest {
 		assertEquals(stats.get(0),stat);
 		Stat statBD=statService.findStat(stat.getStatId());
 		assertEquals(stat,statBD);
+		statBD=statService.findStat(55555l);
+		assertEquals(null,statBD);
 	}
 	
 	@Test

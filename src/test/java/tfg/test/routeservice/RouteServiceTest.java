@@ -54,12 +54,28 @@ public class RouteServiceTest {
 		route1.setRouteName("Kronoescalada");
 		route1.setRouteStart("Vimianzo");
 		routeDao.save(route1);
+		Route route2=new Route();
+		route2.setKilometers(1000l);
+		route2.setKmlFile("kmlfile");
+		route2.setNegativeSlope(100l);
+		route2.setNumberOfHostels(30l);
+		route2.setPositiveSlope(50l);
+		route2.setRouteEnd("Camariñas");
+		route2.setRouteName("Kronoescalada");
+		route2.setRouteStart("Vimianzo");
+		routeDao.save(route2);
 		RouteBlock routes=routeService.findRouteByName("Rutita", 0, 10);
 		assertEquals(routes.getRoutes().size(),1);
 		assertEquals(routes.getRoutes().get(0).getRouteId(),route.getRouteId());
-		routes=routeService.findRouteByName("Kronoescalada", 0, 10);
+		assertTrue(routes.getExistMoreRoutes()==false);
+		routes=routeService.findRouteByName("Kronoescalada", 0, 1);
 		assertEquals(routes.getRoutes().size(),1);
 		assertEquals(routes.getRoutes().get(0).getRouteId(),route1.getRouteId());
+		routes=routeService.findRouteByName(null, 0, 1);
+		assertEquals(routes.getRoutes().size(),1);
+		assertEquals(routes.getRoutes().get(0).getRouteId(),route1.getRouteId());
+		assertTrue(routes.getExistMoreRoutes());
+		
 	}
 	
 	@Test

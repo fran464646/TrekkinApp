@@ -46,6 +46,7 @@ public class ParameterTest {
 			 userProfile = userService.registerUser(
 			        "user", "userPassword",
 			        new UserProfileDetails("name", "lastName", "user@udc.es"));
+			 userProfile.setLoginName("user");
 			
 		} catch (DuplicateInstanceException e) {
 		}
@@ -81,13 +82,8 @@ public class ParameterTest {
 		List<Parameter> parameters = parameterDao.findParametersByUser(userProfile.getUserProfileId());
 		assertTrue(parameters.size()==1);
 		assertEquals(parameter,parameters.get(0));
-		Parameter parameter1 = new Parameter();
-		parameter1.setParameterDescription("Parametro1");
-		parameter1.setParameterKey("Clave1");
-		parameter1.setParameterRouteId(route.getRouteId());
-		parameter1.setParameterRouteName(route.getRouteName());
-		parameter1.setParameterUserId(userProfile.getUserProfileId());
-		parameter1.setParameterValue(2l);
+		Parameter parameter1 = new Parameter(null, "Clave1",
+				2l, userProfile.getUserProfileId(), route.getRouteId(), route.getRouteName(),"Parametro1");
 		parameterDao.save(parameter1);
 		parameters = parameterDao.findParametersByUser(userProfile.getUserProfileId());
 		assertTrue(parameters.size()==2);

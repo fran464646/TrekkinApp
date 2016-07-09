@@ -38,19 +38,13 @@ public class RouteTest {
 		routeDao.save(route);
 		List<Route> routes=routeDao.findByRouteName("Rutita", 0, 10);
 		assertEquals(routes.get(0).getRouteId(),route.getRouteId());
+		routes = routeDao.findByRouteName(null, 0, 10);
+		assertEquals(routes.size(),1);
 	}
 	
 	@Test
 	public void findRouteIds() {
-		Route route=new Route();
-		route.setKilometers(1000l);
-		route.setKmlFile("kmlfile");
-		route.setNegativeSlope(100l);
-		route.setNumberOfHostels(30l);
-		route.setPositiveSlope(50l);
-		route.setRouteEnd("Camariñas");
-		route.setRouteName("Rutita");
-		route.setRouteStart("Vimianzo");
+		Route route=new Route(null, "Rutita", "Vimianzo", "Camariñas",1000l, 50l,100l, 30l, "kmlFile");
 		routeDao.save(route);
 		Route route1=new Route();
 		route1.setKilometers(1000l);
