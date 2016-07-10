@@ -109,18 +109,6 @@ public class StatTest {
 		assertTrue(stats.size()==2);
 		assertEquals(stats.get(0),stat);
 		assertEquals(stats.get(1),stat1);
-		stats = statDao.findStatByRouteAndDate(route.getRouteId(), 0, 2, null, dateEnd);
-		assertTrue(stats.size()==2);
-		assertEquals(stats.get(0),stat);
-		assertEquals(stats.get(1),stat1);
-		stats = statDao.findStatByRouteAndDate(route.getRouteId(), 0, 2, dateStart, null);
-		assertTrue(stats.size()==2);
-		assertEquals(stats.get(0),stat);
-		assertEquals(stats.get(1),stat1);
-		stats = statDao.findStatByRouteAndDate(route.getRouteId(), 0, 2, null, null);
-		assertTrue(stats.size()==2);
-		assertEquals(stats.get(0),stat);
-		assertEquals(stats.get(1),stat1);
 		stats = statDao.findStatByRouteAndDate(route.getRouteId(), 0, 1, dateStart, dateEnd);
 		assertTrue(stats.size()==1);
 		assertEquals(stats.get(0),stat);

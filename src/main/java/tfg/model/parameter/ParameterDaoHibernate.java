@@ -3,7 +3,6 @@ package tfg.model.parameter;
 import java.util.List;
 
 import org.hibernate.Query;
-import org.hibernate.SQLQuery;
 import org.springframework.stereotype.Repository;
 
 import tfg.model.util.GenericDaoHibernate;
@@ -16,7 +15,7 @@ public class ParameterDaoHibernate extends
 	@Override
 	public List<Parameter> findParametersByUser(Long userId) {
 		Query tmpQuery = getSession().createQuery(
-    			"SELECT p FROM Parameter p WHERE p.parameterUserId= :userId")
+    			"SELECT p FROM Parameter p WHERE p.parameterUserId= :userId ")
     			.setParameter("userId", userId);
     	return tmpQuery.list();
 	}

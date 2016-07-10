@@ -541,23 +541,5 @@ public class TweetServiceTest {
 		assertTrue(sentiments.size()==1);
 		assertTrue(sentiments.get(0).getCount()==2);
 	}
-	
-	@Test
-	public void parseKMLTest(){
-		Route route=new Route();
-		route.setKilometers(1000l);
-		route.setKmlFile("kmlfile");
-		route.setNegativeSlope(100l);
-		route.setNumberOfHostels(30l);
-		route.setPositiveSlope(50l);
-		route.setRouteEnd("Camariñas");
-		route.setRouteName("Rutita");
-		route.setRouteStart("Vimianzo");
-		routeDao.save(route);
-		tweetService.parseKml(System.getProperty("user.dir")+ "/src/kml/" + "Camino_Frances_2.kml", route.getRouteId());
-		List<Tweet> tweets=tweetService.findByRoute(route.getRouteId());
-		if (tweets.size()>0)
-			tweetService.updateTweet(tweets.get(0));
-	}
-	
+
 }

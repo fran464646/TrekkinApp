@@ -21,7 +21,7 @@ public class RouteServiceImpl implements RouteService {
 
 	@Override
 	public RouteBlock findRouteByName(String routeName, int startIndex, int count) {
-		List<Route> routes = routeDao.findByRouteName(routeName, startIndex, count+1);
+		List<Route> routes = routeDao.findByRouteName(routeName, startIndex, count);
 
 		boolean existMoreRoutes = routes.size() == (count + 1);
 

@@ -65,8 +65,8 @@
 				<jdbcDriver.className>com.mysql.jdbc.Driver</jdbcDriver.className>
 
 				<!-- Data source properties -->
-				<dataSource.url>jdbc:mysql://localhost:3306/tfg</dataSource.url>
-				<testDataSource.url>jdbc:mysql://localhost:3306/tfg</testDataSource.url>
+				<dataSource.url>jdbc:mysql://localhost/tfg</dataSource.url>
+				<testDataSource.url>${dataSource.url}test</testDataSource.url>
 				<!-- Hibernate properties -->
 				<hibernate.dialect>org.hibernate.dialect.MySQLDialect</hibernate.dialect>
 			</properties>
@@ -220,17 +220,7 @@
 			<artifactId>twitter4j-httpclient-support</artifactId>
 			<version>2.2.6</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/cobertura-maven-plugin -->
-		<dependency>
-		    <groupId>org.codehaus.mojo</groupId>
-		    <artifactId>cobertura-maven-plugin</artifactId>
-		    <version>2.7</version>
-		</dependency>
-		<dependency>
-		    <groupId>xml-apis</groupId>
-		    <artifactId>xml-apis</artifactId>
-		    <version>1.4.01</version>
-		</dependency>
+
 	</dependencies>
 	<repositories>
 		<repository>
@@ -380,6 +370,10 @@
 					<orderFile>ascending</orderFile>
 					<fileset>
 						<basedir>${basedir}</basedir>
+						<includes>
+							<include>src/sql/${dataSource.createTablesScript}</include>
+							<include>src/sql/${dataSource.createDataScript}</include>
+						</includes>
 					</fileset>
 				</configuration>
 				<executions>
@@ -392,12 +386,15 @@
 						<configuration>
 							<driver>${jdbcDriver.className}</driver>
 							<url>${testDataSource.url}</url>
-							<username>${dataSource.user}</username>
-							<password>${dataSource.password}</password>
+							<username>${testDataSource.user}</username>
+							<password>${testDataSource.password}</password>
 							<autocommit>true</autocommit>
 							<onError>continue</onError>
 							<fileset>
 								<basedir>${basedir}</basedir>
+								<includes>
+									<include>src/sql/${dataSource.createTablesScript}</include>
+								</includes>
 							</fileset>
 						</configuration>
 					</execution>
@@ -455,41 +452,4 @@
 		</plugins>
 
 	</build>
-	<reporting>
-  <plugins>
-	<!-- Normally, we take off the dependency report, saves time. -->
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-project-info-reports-plugin</artifactId>
-		<version>2.7</version>
-		<configuration>
-			<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
-		</configuration>
-	</plugin>
-	<plugin>
-		<groupId>org.codehaus.mojo</groupId>
-		<artifactId>cobertura-maven-plugin</artifactId>
-		<version>2.4</version>
-		<configuration>
-			<formats>
-				<format>html</format>
-				<format>xml</format>
-			</formats>
-			 <instrumentation>
-			 <ignores>
-         		 <ignore>tfg.web.*</ignore>
-         		 <ignore>tfg.model.userservice.util</ignore>
-         		 <ignore>tfg.model.util</ignore>
-        	</ignores>
-            <excludes>
-                <exclude>tfg/web/**</exclude>
-                <exclude>tfg/model/userservice/util</exclude>
-                <exclude>tfg/model/util</exclude>
-            </excludes>
-        </instrumentation>
-		</configuration>
-	</plugin>
-
-   </plugins>
-</reporting>
 </project>

@@ -11,7 +11,6 @@ import tfg.model.alert.Alert;
 import tfg.model.alert.AlertDao;
 import tfg.model.parameter.Parameter;
 import tfg.model.parameter.ParameterDao;
-import tfg.model.parameterservice.ParameterService;
 import tfg.model.stat.Stat;
 import tfg.model.stat.StatDao;
 import tfg.model.tweet.Tweet;
@@ -28,9 +27,6 @@ public class AlertServiceImpl implements AlertService {
 	
 	@Autowired
 	private ParameterDao parameterDao;
-	
-	@Autowired
-	private ParameterService parameterService;
 	
 	@Autowired
 	private StatDao statDao;
@@ -67,7 +63,7 @@ public class AlertServiceImpl implements AlertService {
 		List<Stat> stats=statDao.findStatByRouteAndDate(routeId, 0, 1, date, null);
 		if (stats.size()!=0){
 			Stat stat=stats.get(0);
-			List<Parameter> parameters = parameterService.findParameterByUserId(userId);
+			List<Parameter> parameters = parameterDao.findParametersByUser(userId);
 			if (stat.getStatOpinionBalance()>(stat.getStatOldMiddle()+stat.getStatTipicalDeviation())||stat.getStatOpinionBalance()<(stat.getStatOldMiddle()-stat.getStatTipicalDeviation())){
 				Alert alert=new Alert();
 				alert.setAlertDate(new Date());

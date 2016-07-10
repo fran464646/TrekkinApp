@@ -156,11 +156,9 @@ public class SeleniumTest {
 		element = driver.findElement(By.id("dateStart"));
 		element.sendKeys("06/07/2016");
 		element = driver.findElement(By.id("dateEnd"));
-		element.sendKeys("06/07/2016");
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("button"))));
+		element.sendKeys("07/07/2016");
 		element = driver.findElement(By.id("button"));
 		element.click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("tweetName"))));
 		element = driver.findElement(By.id("tweetName"));
 		element.click();
 		element = driver.findElement(By.id("tweetCreationDate"));
@@ -188,7 +186,6 @@ public class SeleniumTest {
 		element.sendKeys("07/07/2016");
 		element = driver.findElement(By.id("button"));
 		element.click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("alertName"))));
 		element = driver.findElement(By.id("alertName"));
 		element.click();
 		element = driver.findElement(By.id("description"));
@@ -210,13 +207,10 @@ public class SeleniumTest {
 		element.click();
 		element = driver.findElement(By.linkText("Configurar alertas"));
 		element.click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("positiveOpinions"))));
 		element = driver.findElement(By.id("positiveOpinions"));
 		element.sendKeys("1");
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("button"))));
 		element = driver.findElement(By.id("button"));
 		element.click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("nombreLoginUsuario"))));
 		element = driver.findElement(By.id("nombreLoginUsuario"));
 		element.click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated((By.linkText("Salir"))));

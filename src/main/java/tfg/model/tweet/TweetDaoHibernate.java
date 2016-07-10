@@ -207,12 +207,12 @@ public class TweetDaoHibernate extends
 		}else{
 			if (dateStart==null){
 				tmpQuery = getSession().createQuery(
-		    			"SELECT u FROM Tweet u WHERE tweetRouteId = :routeId AND tweetSentiment = :sentiment AND tweetCreationDate <= :dateEnd")
+		    			"SELECT u FROM Tweet u WHERE u.tweetRouteId = :routeId AND u.tweetSentiment = :sentiment AND u.tweetCreationDate<= :dateEnd GROUP BY")
 		    			.setParameter("routeId", routeId).setParameter("sentiment", sentiment).setParameter("dateEnd", dateEnd);
 			}else{
 				if (dateEnd==null){
 					tmpQuery = getSession().createQuery(
-			    			"SELECT u FROM Tweet u WHERE u.tweetRouteId = :routeId AND u.tweetSentiment = :sentiment AND u.tweetCreationDate>= :dateStart")
+			    			"SELECT u FROM Tweet u WHERE u.tweetRouteId = :routeId AND u.tweetSentiment = :sentiment AND u.tweetCreationDate>= :dateStart GROUP BY")
 			    			.setParameter("routeId", routeId).setParameter("sentiment", sentiment).setParameter("dateStart", dateStart);
 				}else{
 					tmpQuery = getSession().createQuery(
@@ -221,6 +221,7 @@ public class TweetDaoHibernate extends
 				}
 			}
 		}
+		
 		return tmpQuery.list();	
 	}
 

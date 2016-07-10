@@ -293,7 +293,7 @@ public class RouteStats {
 		}
 		dataset.addSeries(s1);
 
-		final JFreeChart chart = ChartFactory.createTimeSeriesChart(
+		JFreeChart chart = ChartFactory.createTimeSeriesChart(
 				"", // title
 				"Date", // x-axis label
 				"Number of errors", // y-axis label
@@ -374,7 +374,7 @@ public class RouteStats {
 
 		dataset.addValue(countP,"P", "");
 		dataset.addValue(countN, "N", "");
-		final JFreeChart chart = ChartFactory.createBarChart("", "", "", dataset,
+		JFreeChart chart = ChartFactory.createBarChart("", "", "", dataset,
 				PlotOrientation.VERTICAL, true, true, false);
 		chart.setBackgroundPaint(Color.WHITE);
 
@@ -456,7 +456,7 @@ public class RouteStats {
 		}
 		dataset.addSeries(s1);
 
-		final JFreeChart chart = ChartFactory.createTimeSeriesChart(
+		JFreeChart chart = ChartFactory.createTimeSeriesChart(
 				"", // title
 				"Date", // x-axis label
 				"Number of errors", // y-axis label

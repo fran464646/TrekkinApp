@@ -94,4 +94,12 @@ public class UserProfile {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "UserProfile [userProfileId=" + userProfileId + ", loginName="
+				+ loginName + ", encryptedPassword=" + encryptedPassword
+				+ ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", email=" + email + "]";
+	}
+
 }
