@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS tfgtest;
+CREATE DATABASE tfgtest;
 -- Drop tables if exists --
 
 USE tfgtest;
