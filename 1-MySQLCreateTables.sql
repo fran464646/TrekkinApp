@@ -80,6 +80,7 @@ CREATE TABLE Alert(
     alertRouteId BIGINT NOT NULL,
     alertStatId BIGINT NOT NULL,
     alertUserId BIGINT NOT NULL,
+    alertVisited BIT(1),
     CONSTRAINT Alert_PK PRIMARY KEY (alertId),
 	CONSTRAINT AlertRoute_FK FOREIGN KEY (alertRouteId) REFERENCES Route(routeId),
 	CONSTRAINT AlertStat_FK FOREIGN KEY (alertStatId) REFERENCES Stat(statId));
