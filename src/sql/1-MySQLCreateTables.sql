@@ -1,14 +1,15 @@
-
-
+DROP DATABASE IF EXISTS tfgtest;
+CREATE DATABASE IF NOT EXISTS tfgtest;
 -- Drop tables if exists --
 
-DROP TABLE IF EXISTS UserProfile;
-DROP TABLE IF EXISTS Route;
+USE tfgtest;
+
 DROP TABLE IF EXISTS Tweet;
 DROP TABLE IF EXISTS Stat;
 DROP TABLE IF EXISTS Alert;
-
-
+DROP TABLE IF EXISTS Parameter;
+DROP TABLE IF EXISTS UserProfile;
+DROP TABLE IF EXISTS Route;
 
 
 -- ---------- Table for validation queries from the connection pool. ----------

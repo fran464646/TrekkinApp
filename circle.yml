@@ -3,4 +3,4 @@ machine:
     version: oraclejdk8
 database:
   override:
-    - mysql -u root
+    - mysql -u root tfgtest < 1-MySQLCreateTables.sql
