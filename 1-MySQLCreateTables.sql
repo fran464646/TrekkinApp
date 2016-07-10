@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS tfgtest;
 CREATE DATABASE tfgtest;
 -- Drop tables if exists --
 
