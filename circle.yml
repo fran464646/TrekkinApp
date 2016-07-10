@@ -3,6 +3,4 @@ machine:
     version: oraclejdk8
 database:
   override:
-    - mysql -u root
-    - CREATE DATABASE IF NOT EXISTS tfgtest;
-    - mysql -u root tfgtest < 1-MySQLCreateTables.sql
+    - mysql -u root < 1-MySQLCreateTables.sql
